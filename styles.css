@@ -1,0 +1,147 @@
+/* Ensure the html and body can expand to full height */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    position: relative;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('galax.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1; /* Keeps it behind the main content */
+}
+
+/* Container */
+.container {
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1; /* Ensures content stays above the background */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+}
+
+.social-img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Product Section */
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.link-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.link-button img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/* ExitLag Logo */
+.exitlag-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.exitlag-icon:hover {
+    transform: scale(1.1); /* Slightly enlarges the logo on hover */
+}
+
+/* Email Section */
+.email-icon {
+    width: 20px;  /* Adjust size to make the logo smaller */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+/* Hover Effects */
+.link-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darkens the background on hover */
+    transform: scale(1.05); /* Slightly enlarges the link */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .link-button {
+        width: 90%; /* Makes the links occupy more width on smaller screens */
+        margin: 10px auto;
+    }
+    
+    .profile-pic {
+        width: 120px; /* Adjust profile image size on smaller screens */
+        height: 120px;
+    }
+
+    .email-icon {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .exitlag-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
